@@ -8,7 +8,7 @@ RUN find ./guides -name "*.md" -exec sh -c 'pandoc "${0}" -o "${0%.md}.html"' {}
 FROM node:18-alpine AS build
 
 WORKDIR /app
-COPY . .
+COPY svelte/ .
 RUN npm ci && npm run build
 
 FROM node:18-alpine AS runtime
