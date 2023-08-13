@@ -9,4 +9,3 @@ docker rm web-app-container 2>/dev/null || true
 
 # Start the new Docker container
 docker run --detach --name web-app-container -p 8000:3000 -t web-app
-docker logs -f web-app-container
